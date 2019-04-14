@@ -103,10 +103,6 @@ class TestSortedCollection(unittest.TestCase):
         self.assertSequenceEqual(self.target.items[4], new_record1)
         self.assertSequenceEqual(self.target.items[0], new_record2)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> e5e94f6d30c1b1240aade3a3ebc43f4d9ad8e14a
     def test_insert_right(self):
         # original keys was 22 28 30 32
         # new keys would be 22 22 28 30 31 32
@@ -118,10 +114,7 @@ class TestSortedCollection(unittest.TestCase):
         self.assertSequenceEqual(self.target.items[1], new_record2)
 
     def test_remove(self):
-        new_records = [
-            ("a", "foo", 30),
-            ("d", "hogehoge", 32),
-        ]
+        new_records = [("a", "foo", 30), ("d", "hogehoge", 32)]
         self.target.remove(22)
         self.target.remove(28)
         self.assertSequenceEqual(self.target.keys, (30, 32))
@@ -151,12 +144,6 @@ class TestSortedCollection(unittest.TestCase):
                 self.assertEqual(self.target.find(relation_op, key), expected)
 
     def test_find_raises(self):
-        records = [
-            ("c", "baz", 22),
-            ("b", "bar", 28),
-            ("a", "foo", 30),
-            ("d", "hogehoge", 32),
-        ]
         invalid_cases = [
             ("==", 21),
             ("==", 27),
